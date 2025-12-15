@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Price Prediction</title>
+</head>
+<body>
+    <h2>Apple Stock Direction Prediction</h2>
+
+    <form method="POST">
+        {% for feature in features %}
+            <label>{{ feature }}</label><br>
+            <input type="number" step="any" name="{{ feature }}" required><br><br>
+        {% endfor %}
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <h3>Prediction Result</h3>
+        <h2>{{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
